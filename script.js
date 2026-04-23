@@ -1,66 +1,42 @@
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
-document.getElementById('matrixRain').appendChild(canvas);
+(function() {
+    'use strict';
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    const App = {
+        init() {
+            this.setupScrollAnimations();
+            this.setupSmoothScroll();
+        },
 
-const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-const chars = katakana + latin;
+        setupScrollAnimations() {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                },
+                { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+            );
 
-const fontSize = 16;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
+            document.querySelectorAll('.section, .project-card, .skill-item').forEach(el => {
+                el.classList.add('fade-in');
+                observer.observe(el);
+            });
+        },
 
-function draw() {
-    ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    ctx.fillStyle = '#00ff41';
-    ctx.font = fontSize + 'px monospace';
-    
-    for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
-        
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
+        setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(anchor.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
         }
-        drops[i]++;
-    }
-}
+    };
 
-setInterval(draw, 35);
-
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-
-const typingText = document.querySelector('.typing-text');
-const text = typingText.textContent;
-typingText.textContent = '';
-let i = 0;
-
-function typeWriter() {
-    if (i < text.length) {
-        typingText.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-    }
-}
-
-setTimeout(typeWriter, 500);
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-});
+    document.addEventListener('DOMContentLoaded', () => App.init());
+})();
