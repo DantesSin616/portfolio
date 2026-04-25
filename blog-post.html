@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Ignotus</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Blog Post | Ignotus">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">Ignotus</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="page-header">
+                <p class="hero-label mono"><a href="blog.html" style="color: var(--text-muted);">← Back to Blog</a></p>
+                <h1 class="page-title mono" id="post-title">Loading...</h1>
+                <p class="blog-date" id="post-date"></p>
+            </div>
+
+            <div class="sub-section">
+                <div class="about-text" id="post-content">
+                    <p>Loading post content...</p>
+                </div>
+            </div>
+
+            <div class="sub-section" id="post-tags-section">
+                <div class="blog-tags" id="post-tags">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-logo mono">Ignotus</p>
+                <p class="footer-copy">© 2026 Ignotus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id') || 'sql-injection-guide';
+            
+            const posts = {
+                'sql-injection-guide': {
+                    title: 'SQL Injection: The Silent Threat',
+                    date: '2026-04-20',
+                    content: `
+                        <p>SQL Injection is one of the most dangerous vulnerabilities in web application security. It allows attackers to interfere with queries that an application makes to its database.</p>
+                        
+                        <h2 class="sub-section-title">Understanding the Vulnerability</h2>
+                        <p>SQL injection occurs when user input is incorporated into SQL queries without proper sanitization. An attacker can manipulate the input to alter the query's logic.</p>
+                        
+                        <h2 class="sub-section-title">Prevention Methods</h2>
+                        <p><strong>1. Parameterized Queries</strong> - Use prepared statements that separate code from data.</p>
+                        <p><strong>2. Input Validation</strong> - Strictly validate all user inputs against expected patterns.</p>
+                        <p><strong>3. Least Privilege</strong> - Database users should have only the permissions they absolutely need.</p>
+                        <p><strong>4. Escaping</strong> - If you must use dynamic SQL, properly escape all user input.</p>
+                        
+                        <h2 class="sub-section-title">Example</h2>
+                        <div class="terminal-box">
+                            <p class="output-line">-- Vulnerable query:</p>
+                            <p class="output-line">SELECT * FROM users WHERE username = '" + userInput + "'"</p>
+                            <br>
+                            <p class="output-line">-- If userInput = "' OR '1'='1"</p>
+                            <p class="output-line">-- The query becomes:</p>
+                            <p class="output-line">SELECT * FROM users WHERE username = '' OR '1'='1'</p>
+                        </div>
+                        
+                        <p>Always use parameterized queries (prepared statements) to prevent SQL injection!</p>
+                    `,
+                    tags: ['Cybersecurity', 'Web Security']
+                },
+                'xss-prevention': {
+                    title: 'Cross-Site Scripting (XSS) Defense',
+                    date: '2026-04-15',
+                    content: `
+                        <p>Cross-Site Scripting (XSS) attacks inject malicious scripts into trusted websites. Here's how to defend against them.</p>
+                        
+                        <h2 class="sub-section-title">Types of XSS</h2>
+                        <p><strong>1. Reflected XSS</strong> - Malicious script is part of the request sent to the web server.</p>
+                        <p><strong>2. Stored XSS</strong> - Malicious script is stored on the target server.</p>
+                        <p><strong>3. DOM-based XSS</strong> - Vulnerabilities in client-side code.</p>
+                        
+                        <h2 class="sub-section-title">Defense Strategies</h2>
+                        <p><strong>1. Output Encoding</strong> - Encode all untrusted data before rendering.</p>
+                        <p><strong>2. Content Security Policy</strong> - Use CSP headers to restrict script sources.</p>
+                        <p><strong>3. HTTPOnly Cookies</strong> - Prevent JavaScript access to cookies.</p>
+                    `,
+                    tags: ['Cybersecurity', 'Web Security']
+                },
+                'python-microservices': {
+                    title: 'Building Microservices with Python & FastAPI',
+                    date: '2026-04-10',
+                    content: `
+                        <p>FastAPI has become one of the most popular Python frameworks for building microservices. Here's a guide on architecture patterns and best practices.</p>
+                        
+                        <h2 class="sub-section-title">Why FastAPI?</h2>
+                        <p>FastAPI is modern, fast, and provides automatic documentation with Swagger UI. It's built on Starlette for routing and Pydantic for data validation.</p>
+                        
+                        <h2 class="sub-section-title">Best Practices</h2>
+                        <p><strong>1. Dependency Injection</strong> - Use FastAPI's dependency system for clean code.</p>
+                        <p><strong>2. Async/Await</strong> - Leverage Python's async capabilities for performance.</p>
+                        <p><strong>3. Configuration</strong> - Keep config separate from code using environment variables.</p>
+                        <p><strong>4. Error Handling</strong> - Implement centralized exception handlers.</p>
+                    `,
+                    tags: ['Software Engineering', 'Backend']
+                }
+            };
+            
+            const post = posts[postId];
+            if (post) {
+                document.getElementById('post-title').textContent = post.title;
+                document.getElementById('post-date').textContent = post.date;
+                document.getElementById('post-content').innerHTML = post.content;
+                document.getElementById('post-tags').innerHTML = post.tags.map(tag => `<span>${tag}</span>`).join('');
+                document.title = `${post.title} | Ignotus`;
+            } else {
+                document.getElementById('post-title').textContent = 'Post Not Found';
+                document.getElementById('post-content').innerHTML = '<p>The requested blog post could not be found.</p>';
+                document.getElementById('post-tags-section').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

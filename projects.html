@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Ignotus</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Projects | Ignotus - Backend Engineer">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">Ignotus</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Projects</h1>
+                <p class="page-subtitle">A collection of projects showcasing backend development, system design, and software engineering expertise.</p>
+            </div>
+
+            <div class="sub-section">
+                <h2 class="sub-section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">static_webpages_generator</h3>
+                            <a href="https://github.com/DantesSin616/static_webpages_generator" class="project-link" target="_blank" rel="noopener noreferrer">View →</a>
+                        </div>
+                        <p class="project-desc">A Python tool that converts Markdown files into structured static websites. Features recursive generation, template system, and automatic asset copying.</p>
+                        <div class="project-techs">
+                            <span>Python</span>
+                            <span>CSS</span>
+                            <span>Shell</span>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">bookbot</h3>
+                            <a href="https://github.com/DantesSin616/bookbot" class="project-link" target="_blank" rel="noopener noreferrer">View →</a>
+                        </div>
+                        <p class="project-desc">Python CLI tool for analyzing text files. Provides word count, character frequency analysis, and clean statistical reports.</p>
+                        <div class="project-techs">
+                            <span>Python</span>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">FinanceTracker</h3>
+                            <a href="https://github.com/DantesSin616/FinanceTracker" class="project-link" target="_blank" rel="noopener noreferrer">View →</a>
+                        </div>
+                        <p class="project-desc">CS50 final project - CLI finance tracker in C. Records income/expenses to CSV with add, list, edit, delete, filter, and aggregation commands.</p>
+                        <div class="project-techs">
+                            <span>C</span>
+                            <span>CSV</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h2 class="sub-section-title">Tools & Dotfiles</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Atlas</h3>
+                            <a href="https://github.com/DantesSin616/Atlas" class="project-link" target="_blank" rel="noopener noreferrer">View →</a>
+                        </div>
+                        <p class="project-desc">My fast workstation deployment. Custom shell environment, productivity aliases, and automation scripts for rapid development setup.</p>
+                        <div class="project-techs">
+                            <span>Shell</span>
+                            <span>Python</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h2 class="sub-section-title">Skills</h2>
+                <div class="skills-grid">
+                    <article class="skill-item">
+                        <div class="skill-icon">🐍</div>
+                        <h3>Python</h3>
+                        <p>FastAPI, Django, Flask</p>
+                    </article>
+                    <article class="skill-item">
+                        <div class="skill-icon">🐹</div>
+                        <h3>Go</h3>
+                        <p>Backend services, APIs</p>
+                    </article>
+                    <article class="skill-item">
+                        <div class="skill-icon">🔷</div>
+                        <h3>TypeScript</h3>
+                        <p>Full-stack, Node.js</p>
+                    </article>
+                    <article class="skill-item">
+                        <div class="skill-icon">⚡</div>
+                        <h3>C</h3>
+                        <p>Systems, algorithms</p>
+                    </article>
+                    <article class="skill-item">
+                        <div class="skill-icon">🐘</div>
+                        <h3>PHP</h3>
+                        <p>Legacy, WordPress</p>
+                    </article>
+                    <article class="skill-item">
+                        <div class="skill-icon">🔧</div>
+                        <h3>C++</h3>
+                        <p>AI/ML, learning</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-logo">Ignotus</p>
+                <p class="footer-copy">© 2026 Ignotus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

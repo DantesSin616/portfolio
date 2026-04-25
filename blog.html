@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ignotus</title>
+    <title>Blog | Ignotus</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Ignotus - Backend Engineer | Python & Go | Systems & Scale">
+    <meta name="description" content="Blog | Ignotus - Cybersecurity, AI/ML, Software Engineering">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo">Ignotus</a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
@@ -26,18 +26,16 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <p class="hero-label mono">BACKEND ENGINEER</p>
-            <h1 class="hero-name">Ignotus</h1>
-            <p class="hero-tagline sans">Building scalable systems and modern digital experiences</p>
-            <div class="hero-meta">
-                <span class="hero-location">Caracas, Venezuela</span>
-                <span class="hero-role mono">Python & Go Specialist</span>
+    <section class="section">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title mono">Blog</h1>
+                <p class="page-subtitle">Thoughts on cybersecurity, AI/ML, software engineering, and IT news.</p>
             </div>
-            <div class="hero-links">
-                <a href="projects.html">./view_projects.sh</a>
-                <a href="contact.html">./connect.sh</a>
+
+            <div class="sub-section">
+                <div class="blog-list" id="blog-posts">
+                </div>
             </div>
         </div>
     </section>
