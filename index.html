@@ -15,20 +15,27 @@
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo">Ignotus</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
-            </ul>
+            <div class="nav-links-wrapper">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button class="mobile-menu-btn" aria-label="Open menu">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                    </button>
+                    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-label mono">BACKEND ENGINEER</p>
+            <p class="hero-label mono">BACKEND ENGINEER<span class="cursor"></span></p>
             <h1 class="hero-name">Ignotus</h1>
             <p class="hero-tagline sans">Building scalable systems and modern digital experiences</p>
             <div class="hero-meta">
