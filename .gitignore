@@ -22,3 +22,26 @@ build/
 
 # Blog guide
 BLOG_GUIDE.md
+
+# Dependencies
+node_modules/
+npm/
+.yarn/
+.pnp/
+.pnp.js
+
+# Caches
+.cache/
+.parcel-cache/
+.vite/
+.netlify/
+.vercel/
+.output/
+.coverage/
+nyc_temp/
+
+# Misc
+*.bak
+*.backup
+*.old
+*.tsbuildinfo

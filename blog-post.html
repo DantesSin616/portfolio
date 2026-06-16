@@ -10,8 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="Blog Post | Ignotus">
+    <meta property="og:title" content="Blog Post | Ignotus">
+    <meta property="og:description" content="Blog post from Ignotus portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ignotus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog Post | Ignotus">
+    <meta name="twitter:description" content="Blog post from Ignotus portfolio">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo">Ignotus</a>
@@ -136,6 +144,14 @@
                 document.getElementById('post-content').innerHTML = post.content;
                 document.getElementById('post-tags').innerHTML = post.tags.map(tag => `<span>${tag}</span>`).join('');
                 document.title = `${post.title} | Ignotus`;
+
+                // Update meta tags for sharing
+                const description = `${post.title} - Read this post on the Ignotus portfolio.`;
+                document.querySelector('meta[name="description"]').setAttribute('content', description);
+                document.querySelector('meta[property="og:title"]').setAttribute('content', post.title);
+                document.querySelector('meta[property="og:description"]').setAttribute('content', description);
+                document.querySelector('meta[name="twitter:title"]').setAttribute('content', post.title);
+                document.querySelector('meta[name="twitter:description"]').setAttribute('content', description);
             } else {
                 document.getElementById('post-title').textContent = 'Post Not Found';
                 document.getElementById('post-content').innerHTML = '<p>The requested blog post could not be found.</p>';
